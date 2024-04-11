@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Alarm Clock</title>
+  </head>
+  <body>
+    <main class="main">
+      <h1 class="time">17:15:31</h1>
+      <div class="alarm">
+        <div class="alarmTime">
+          <div class="alarmTime-block">
+            <span>Часы</span>
+            <input type="number" min="00" max="23" value="00" />
+          </div>
+          <div class="alarmTime-block">
+            <span>Минуты</span>
+            <input type="number" min="00" max="59" value="00" />
+          </div>
+          <div class="alarmTime-block">
+            <span>Секунды</span>
+            <input type="number" min="00" max="59" value="00" />
+          </div>
+        </div>
+        <div class="alarmControls">
+          <div class="block-file">
+            <input type="file" name="audio" multiple accept="audio/*" />
+          </div>
+          <div class="block-btn">
+            <button type="button" class="btn btnPutAlarm">Поставить</button>
+            <button type="button" class="btn btnDropAlarm">Сбросить</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

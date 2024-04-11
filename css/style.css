@@ -1,0 +1,108 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #dce4e7;
+  font-family: sans-serif;
+  color: #fff;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-inline: auto;
+  margin-block-start: 50vh;
+  transform: translateY(-50%);
+  width: 25vw;
+  padding-top: 25px;
+  padding-bottom: 15px;
+  gap: 25px;
+  border-radius: 20px;
+  background-color: #272e38;
+}
+
+.time {
+  font-size: 100px;
+  border-radius: 20px;
+  background-color: #0f1620;
+}
+
+.alarm {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.alarmTime {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  height: 5vh;
+}
+
+.alarmTime .alarmTime-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.alarmControls {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 25px;
+}
+
+.alarmControls .block-btn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.alarmControls .block-file {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  min-width: 100px;
+  font-family: inherit;
+  appearance: none;
+  border: 0;
+  border-radius: 5px;
+  color: #fff;
+  padding: 8px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn.btnPutAlarm {
+  background: #4676d7;
+}
+
+.btn.btnPutAlarm:hover {
+  background: #1d49aa;
+}
+
+.btn.btnPutAlarm:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px #cbd6ee;
+}
+
+.btn.btnDropAlarm {
+  background: #d74646;
+}
+
+.btn.btnDropAlarm:hover {
+  background: #aa1d1d;
+}
+
+.btn.btnDropAlarm:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px #eecbcb;
+}
+
+
