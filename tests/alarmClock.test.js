@@ -24,7 +24,13 @@ describe("updateTime() test case", () => {
     alarm_Clock = new alarmClock();
   });
   it("currentTime not null", () => {
-    alarm_Clock.updateTime('12:55:00');
-    expect(alarm_Clock.currentTimeElement).not.toBe("");
+    alarm_Clock.updateTime("12:55:00");
+    expect(alarm_Clock.currentTime).not.toBe("");
+  });
+  it("currentTime matches the format", () => {
+    let time = new Date();
+    time.setHours(16, 30, 0);
+    alarm_Clock.updateTime(time);
+    expect(alarm_Clock.currentTime).toBe("16:30:00");
   });
 });
