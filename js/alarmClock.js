@@ -2,6 +2,7 @@ class alarmClock {
   constructor() {
     this.alarmTime = "";
     this.currentTime = "";
+    this.alarmAudio = new Audio();
   }
 
   /**
@@ -27,6 +28,11 @@ class alarmClock {
   setAlarm(time) {
     //todo реализовать метод setAlarm() позднее до конца
     this.alarmTime = time;
+  }
+
+  playAlarm(path) {
+    this.alarmAudio.src = path;
+    this.alarmAudio.play();
   }
 }
 

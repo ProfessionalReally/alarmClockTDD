@@ -9,9 +9,11 @@ describe("AlarmClock class creation test", () => {
 
 describe("setAlarm() test case", () => {
   let alarm_Clock;
+
   beforeEach(() => {
     alarm_Clock = new alarmClock();
   });
+
   it("set alarm for 08:00:00", () => {
     const time = "08:00:00";
     alarm_Clock.setAlarm(time);
@@ -21,13 +23,16 @@ describe("setAlarm() test case", () => {
 
 describe("updateTime() test case", () => {
   let alarm_Clock;
+
   beforeEach(() => {
     alarm_Clock = new alarmClock();
   });
+
   it("currentTime not null", () => {
     alarm_Clock.updateTime("12:55:00");
     expect(alarm_Clock.currentTime).not.toBe("");
   });
+  
   it("currentTime matches the format", () => {
     let time = new Date();
     time.setHours(16, 30, 0);
