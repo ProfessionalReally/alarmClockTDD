@@ -1,12 +1,12 @@
 class alarmClock {
   constructor() {
-    this.alarmTime = "";
+    this.alarmTime = '';
   }
 
-  /** 
-  * Метод, устанавливающий будильник
-  * @param {string} time - Время будильника 
-  */
+  /**
+   * Метод, устанавливающий будильник
+   * @param {string} time - Время будильника
+   */
   setAlarm(time) {
     //todo реализовать метод setAlarm() позднее до конца
     this.alarmTime = time;
