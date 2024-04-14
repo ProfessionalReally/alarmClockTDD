@@ -4,6 +4,12 @@ class alarmClock {
     this.currentTime = "";
   }
 
+  /**
+   * Метод, обновляющий текущее время
+   * @param {string|Date} currentTime - Время для обновления. 
+   * Может быть строкой в формате 'часы:минуты:секунды' 
+   * или объектом Date().
+   */
   updateTime(currentTime) {
     if (currentTime instanceof Date) {
       const hours = currentTime.getHours().toString().padStart(2, "0");
