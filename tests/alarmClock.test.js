@@ -1,4 +1,5 @@
 const alarmClock = require("../js/alarmClock");
+const audioFilePath = '../music/soundAlarm.mp3'
 
 describe("AlarmClock class creation test", () => {
   it("should exist", () => {
@@ -32,5 +33,20 @@ describe("updateTime() test case", () => {
     time.setHours(16, 30, 0);
     alarm_Clock.updateTime(time);
     expect(alarm_Clock.currentTime).toBe("16:30:00");
+  });
+});
+
+describe("playAlarm() test case", () => {
+  let alarm_Clock;
+  
+  beforeEach(() => {
+    alarm_Clock = new alarmClock();
+  });
+
+  it("playAlarm() if you haven't played before", () => {
+    const playSpy = jest.spyOn(alarm_Clock.alarmAudio, 'play');
+    alarm_Clock.playAlarm(audioFilePath);
+    expect(playSpy).toHaveBeenCalled();
+    playSpy.mockRestore();
   });
 });
