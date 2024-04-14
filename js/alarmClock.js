@@ -1,6 +1,11 @@
 class alarmClock {
   constructor() {
     this.alarmTime = '';
+    this.currentTime = '';
+  }
+
+  updateTime(currentTime) {
+    this.currentTime = currentTime;
   }
 
   /**
