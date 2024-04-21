@@ -44,6 +44,10 @@ class alarmClock {
       this.isAlarmPlaying = true;
     }
   }
+
+  turnOffAlarm() {
+    this.alarmAudio.pause();
+  }
 }
 
 module.exports = alarmClock;
