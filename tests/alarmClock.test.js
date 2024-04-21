@@ -8,14 +8,26 @@ describe("alarmClock test case", () => {
     });
   });
 
+  describe("alarmClock call updateTime in constructor", () => {
+    let alarm_Clock;
+    
+    beforeEach(() => {
+      alarm_Clock = new alarmClock();
+    });
+
+    it("currentTime should not be empty after updateTime in the constructor", () => {
+      expect(alarm_Clock.currentTime).not.toBe('');
+    });
+  });
+
   describe("alarmClock call updateTime() test", () => {
-    let clock;
+    let alarm_Clock;
     let updateTimeSpy;
 
     beforeEach(() => {
       jest.useFakeTimers();
-      clock = new alarmClock();
-      updateTimeSpy = jest.spyOn(clock, "updateTime");
+      alarm_Clock = new alarmClock();
+      updateTimeSpy = jest.spyOn(alarm_Clock, "updateTime");
     });
 
     afterEach(() => {
