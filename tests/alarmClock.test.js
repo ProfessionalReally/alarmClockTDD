@@ -69,3 +69,22 @@ describe("playAlarm() test case", () => {
     expect(alarm_Clock.alarmAudio.currentTime).toBe(0);
   });
 });
+
+describe("turnOffAlarm() test case", () => {
+  let alarm_Clock;
+
+  beforeEach(() => {
+    alarm_Clock = new alarmClock();
+  });
+
+  describe("turnOffAlarm() when the alarm is playing", () => {
+    beforeEach(() => {
+      alarm_Clock.playAlarm(audioFilePath);
+      alarm_Clock.turnOffAlarm(); 
+    });
+
+    it("should pause the alarm audio", () => {
+      expect(alarm_Clock.alarmAudio.paused).toBe(true);
+    });
+  });
+});
