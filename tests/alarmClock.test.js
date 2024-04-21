@@ -86,5 +86,9 @@ describe("turnOffAlarm() test case", () => {
     it("should pause the alarm audio", () => {
       expect(alarm_Clock.alarmAudio.paused).toBe(true);
     });
+
+    it('should set isAlarmPlaying to false', () => {
+      expect(alarm_Clock.isAlarmPlaying).toBe(false);
+    });
   });
 });
