@@ -3,12 +3,13 @@ class alarmClock {
     this.alarmTime = "";
     this.currentTime = "";
     this.alarmAudio = new Audio();
+    this.isAlarmPlaying = false;
   }
 
   /**
    * Метод, обновляющий текущее время
-   * @param {string|Date} currentTime - Время для обновления. 
-   * Может быть строкой в формате 'часы:минуты:секунды' 
+   * @param {string|Date} currentTime - Время для обновления.
+   * Может быть строкой в формате 'часы:минуты:секунды'
    * или объектом Date().
    */
   updateTime(currentTime) {
@@ -31,8 +32,11 @@ class alarmClock {
   }
 
   playAlarm(path) {
-    this.alarmAudio.src = path;
-    this.alarmAudio.play();
+    if (!this.isAlarmPlaying) {
+      this.alarmAudio.src = path;
+      this.alarmAudio.play();
+      this.isAlarmPlaying = true;
+    }
   }
 }
 

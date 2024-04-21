@@ -1,5 +1,5 @@
 const alarmClock = require("../js/alarmClock");
-const audioFilePath = '../music/soundAlarm.mp3'
+const audioFilePath = "../music/soundAlarm.mp3";
 
 describe("AlarmClock class creation test", () => {
   it("should exist", () => {
@@ -32,7 +32,7 @@ describe("updateTime() test case", () => {
     alarm_Clock.updateTime("12:55:00");
     expect(alarm_Clock.currentTime).not.toBe("");
   });
-  
+
   it("currentTime matches the format", () => {
     let time = new Date();
     time.setHours(16, 30, 0);
@@ -43,21 +43,21 @@ describe("updateTime() test case", () => {
 
 describe("playAlarm() test case", () => {
   let alarm_Clock;
-  
+
   beforeEach(() => {
     alarm_Clock = new alarmClock();
   });
 
   it("playAlarm() if you haven't played before", () => {
-    const playSpy = jest.spyOn(alarm_Clock.alarmAudio, 'play');
+    const playSpy = jest.spyOn(alarm_Clock.alarmAudio, "play");
     alarm_Clock.playAlarm(audioFilePath);
     expect(playSpy).toHaveBeenCalled();
     playSpy.mockRestore();
   });
 
-  it('playAlarm() should not play if the tune is already playing', () => {
+  it("playAlarm() should not play if the tune is already playing", () => {
     alarm_Clock.isAlarmPlaying = true;
-    const playSpy = jest.spyOn(alarm_lock.alarmAudio, 'play');
+    const playSpy = jest.spyOn(alarm_Clock.alarmAudio, "play");
     alarm_Clock.playAlarm();
     expect(playSpy).not.toHaveBeenCalled();
     playSpy.mockRestore();
