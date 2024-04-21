@@ -33,6 +33,7 @@ class alarmClock {
 
   playAlarm(path) {
     if (!this.isAlarmPlaying) {
+      this.alarmAudio.currentTime = 0;
       this.alarmAudio.src = path;
       this.alarmAudio.play();
       this.isAlarmPlaying = true;
