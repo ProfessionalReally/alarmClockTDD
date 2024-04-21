@@ -62,4 +62,10 @@ describe("playAlarm() test case", () => {
     expect(playSpy).not.toHaveBeenCalled();
     playSpy.mockRestore();
   });
+
+  it("PlayAlarm() resets audio to start when playing the alarm sound", () => {
+    alarm_Clock.alarmAudio.currentTime = 10;
+    alarm_Clock.playAlarm();
+    expect(alarm_Clock.alarmAudio.currentTime).toBe(0);
+  });
 });
