@@ -31,6 +31,11 @@ class alarmClock {
     this.alarmTime = time;
   }
 
+
+  /**
+   * Метод, который запускает будильник
+   * @param {string} path - Путь к аудио-файлу будильника
+   */
   playAlarm(path) {
     if (!this.isAlarmPlaying) {
       this.alarmAudio.currentTime = 0;
