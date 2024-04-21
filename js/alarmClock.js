@@ -5,6 +5,8 @@ class alarmClock {
     this.alarmAudio = new Audio();
     this.isAlarmPlaying = false;
 
+    this.updateTime(new Date());
+
     setInterval(() => {
       this.updateTime(new Date());
     }, 1000);
