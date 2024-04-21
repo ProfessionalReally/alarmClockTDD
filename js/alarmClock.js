@@ -31,7 +31,6 @@ class alarmClock {
     this.alarmTime = time;
   }
 
-
   /**
    * Метод, который запускает будильник
    * @param {string} path - Путь к аудио-файлу будильника
@@ -47,6 +46,7 @@ class alarmClock {
 
   turnOffAlarm() {
     this.alarmAudio.pause();
+    this.isAlarmPlaying = false;
   }
 }
 
