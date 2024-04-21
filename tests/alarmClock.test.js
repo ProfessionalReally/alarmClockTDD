@@ -1,9 +1,34 @@
 const alarmClock = require("../js/alarmClock");
 const audioFilePath = "../music/soundAlarm.mp3";
 
-describe("AlarmClock class creation test", () => {
-  it("should exist", () => {
-    expect(alarmClock).toBeDefined();
+describe("alarmClock test case", () => {
+  describe("alarmClock class creation test", () => {
+    it("should exist", () => {
+      expect(alarmClock).toBeDefined();
+    });
+  });
+
+  describe("alarmClock call updateTime() test", () => {
+    let clock;
+    let updateTimeSpy;
+
+    beforeEach(() => {
+      jest.useFakeTimers();
+      clock = new alarmClock();
+      updateTimeSpy = jest.spyOn(clock, "updateTime");
+    });
+
+    afterEach(() => {
+      jest.clearAllTimers();
+    });
+
+    it("should call updateTime() every second", () => {
+      jest.advanceTimersByTime(1000);
+      expect(updateTimeSpy).toHaveBeenCalledTimes(1);
+
+      jest.advanceTimersByTime(2000);
+      expect(updateTimeSpy).toHaveBeenCalledTimes(3);
+    });
   });
 });
 
@@ -80,14 +105,14 @@ describe("turnOffAlarm() test case", () => {
   describe("turnOffAlarm() when the alarm is playing", () => {
     beforeEach(() => {
       alarm_Clock.playAlarm(audioFilePath);
-      alarm_Clock.turnOffAlarm(); 
+      alarm_Clock.turnOffAlarm();
     });
 
     it("should pause the alarm audio", () => {
       expect(alarm_Clock.alarmAudio.paused).toBe(true);
     });
 
-    it('should set isAlarmPlaying to false', () => {
+    it("should set isAlarmPlaying to false", () => {
       expect(alarm_Clock.isAlarmPlaying).toBe(false);
     });
   });

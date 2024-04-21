@@ -44,6 +44,9 @@ class alarmClock {
     }
   }
 
+  /**
+   * Метод, который отключает будильник
+   */
   turnOffAlarm() {
     this.alarmAudio.pause();
     this.isAlarmPlaying = false;
