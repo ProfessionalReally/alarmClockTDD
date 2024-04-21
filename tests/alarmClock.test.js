@@ -54,4 +54,12 @@ describe("playAlarm() test case", () => {
     expect(playSpy).toHaveBeenCalled();
     playSpy.mockRestore();
   });
+
+  it('playAlarm() should not play if the tune is already playing', () => {
+    alarm_Clock.isAlarmPlaying = true;
+    const playSpy = jest.spyOn(alarm_lock.alarmAudio, 'play');
+    alarm_Clock.playAlarm();
+    expect(playSpy).not.toHaveBeenCalled();
+    playSpy.mockRestore();
+  });
 });
