@@ -4,6 +4,10 @@ class alarmClock {
     this.currentTime = "";
     this.alarmAudio = new Audio();
     this.isAlarmPlaying = false;
+
+    setInterval(() => {
+      this.updateTime(new Date());
+    }, 1000);
   }
 
   /**
