@@ -76,6 +76,17 @@ describe("updateTime() test case", () => {
     alarm_Clock.updateTime(time);
     expect(alarm_Clock.currentTime).toBe("16:30:00");
   });
+
+  it('should call playAlarm() when currentTime equals alarmTime', () => {
+    alarm_Clock.setAudioFilePath(audioFilePath);
+    const alarmTime = "12:00:00"
+    const playAlarmMock = jest.spyOn(alarm_Clock, 'playAlarm');
+    alarm_Clock.setAlarm(alarmTime);
+    alarm_Clock.updateTime(alarmTime);
+    expect(playAlarmMock).toHaveBeenCalled();
+    playAlarmMock.mockRestore();
+  });
+
 });
 
 describe("playAlarm() test case", () => {
