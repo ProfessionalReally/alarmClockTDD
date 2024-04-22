@@ -27,6 +27,8 @@ class alarmClock {
       const timeString = `${hours}:${minutes}:${seconds}`;
       this.currentTime = timeString;
     } else this.currentTime = currentTime;
+
+    if (this.alarmTime === this.currentTime) this.playAlarm(this.audioFilePath);
   }
 
   /**
