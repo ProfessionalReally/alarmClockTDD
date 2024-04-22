@@ -129,3 +129,16 @@ describe("turnOffAlarm() test case", () => {
     });
   });
 });
+
+describe("setAudioFilePath() test case", () => {
+  let alarm_Clock;
+
+  beforeEach(() => {
+    alarm_Clock = new alarmClock();
+  });
+
+  it("should set audioFilePath correctly", () => {
+    alarm_Clock.setAudioFilePath(audioFilePath);
+    expect(alarm_Clock.audioFilePath).toBe(audioFilePath);
+  });
+});
