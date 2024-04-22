@@ -59,6 +59,10 @@ class alarmClock {
     this.isAlarmPlaying = false;
   }
 
+  /**
+   * Метод для установки пути к аудио-файлу
+   * @param {string} audioFilePath 
+   */
   setAudioFilePath(audioFilePath) {
     this.audioFilePath = audioFilePath;
   }
