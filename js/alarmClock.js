@@ -4,6 +4,7 @@ class alarmClock {
     this.currentTime = "";
     this.alarmAudio = new Audio();
     this.isAlarmPlaying = false;
+    this.audioFilePath = "";
 
     this.updateTime(new Date());
 
@@ -56,6 +57,10 @@ class alarmClock {
   turnOffAlarm() {
     this.alarmAudio.pause();
     this.isAlarmPlaying = false;
+  }
+
+  setAudioFilePath(audioFilePath) {
+    this.audioFilePath = audioFilePath;
   }
 }
 
