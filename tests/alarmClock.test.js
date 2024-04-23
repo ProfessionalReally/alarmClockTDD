@@ -1,4 +1,4 @@
-const alarmClock = require("../js/alarmClock");
+import { alarmClock } from "../js/alarmClock";
 const audioFilePath = "../music/soundAlarm.mp3";
 
 describe("alarmClock test case", () => {
@@ -10,13 +10,13 @@ describe("alarmClock test case", () => {
 
   describe("alarmClock call updateTime in constructor", () => {
     let alarm_Clock;
-    
+
     beforeEach(() => {
       alarm_Clock = new alarmClock();
     });
 
     it("currentTime should not be empty after updateTime in the constructor", () => {
-      expect(alarm_Clock.currentTime).not.toBe('');
+      expect(alarm_Clock.currentTime).not.toBe("");
     });
   });
 
@@ -77,16 +77,15 @@ describe("updateTime() test case", () => {
     expect(alarm_Clock.currentTime).toBe("16:30:00");
   });
 
-  it('should call playAlarm() when currentTime equals alarmTime', () => {
+  it("should call playAlarm() when currentTime equals alarmTime", () => {
     alarm_Clock.setAudioFilePath(audioFilePath);
-    const alarmTime = "12:00:00"
-    const playAlarmMock = jest.spyOn(alarm_Clock, 'playAlarm');
+    const alarmTime = "12:00:00";
+    const playAlarmMock = jest.spyOn(alarm_Clock, "playAlarm");
     alarm_Clock.setAlarm(alarmTime);
     alarm_Clock.updateTime(alarmTime);
     expect(playAlarmMock).toHaveBeenCalled();
     playAlarmMock.mockRestore();
   });
-
 });
 
 describe("playAlarm() test case", () => {

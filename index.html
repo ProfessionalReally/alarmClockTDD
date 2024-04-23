@@ -11,24 +11,59 @@
   <body>
     <main class="main">
       <div class="time"></div>
+      <div class="notification">
+        <div class="time timeAlarm"></div>
+        <div class="btnBlock">
+          <button id="btnTurnOffAlarm" class="btn btnTurnOffAlarm">
+            Отключить
+          </button>
+        </div>
+      </div>
       <div class="alarm">
         <div class="alarmTime">
           <div class="alarmTime-block">
             <span>Часы</span>
-            <input type="number" min="00" max="23" value="00" />
+            <input
+              id="hoursInput"
+              type="number"
+              min="00"
+              max="23"
+              maxlength="2"
+              value="00"
+            />
           </div>
           <div class="alarmTime-block">
             <span>Минуты</span>
-            <input type="number" min="00" max="59" value="00" />
+            <input
+              id="minutesInput"
+              type="number"
+              min="00"
+              max="59"
+              maxlength="2"
+              value="00"
+            />
           </div>
           <div class="alarmTime-block">
             <span>Секунды</span>
-            <input type="number" min="00" max="59" value="00" />
+            <input
+              id="secondsInput"
+              type="number"
+              min="00"
+              max="59"
+              maxlength="2"
+              value="00"
+            />
           </div>
         </div>
         <div class="alarmControls">
           <div class="block-file">
-            <input type="file" name="audio" multiple accept="audio/*" />
+            <input
+              id="audioFileInput"
+              type="file"
+              name="audio"
+              multiple
+              accept="audio/*"
+            />
           </div>
           <div class="block-btn">
             <button type="button" class="btn btnPutAlarm">Поставить</button>
@@ -37,5 +72,7 @@
         </div>
       </div>
     </main>
+    <script type="module" src="js/alarmClock.js"></script>
+    <script type="module" src="js/main.js"></script>
   </body>
 </html>

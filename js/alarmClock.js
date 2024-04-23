@@ -1,4 +1,4 @@
-class alarmClock {
+export class alarmClock {
   constructor() {
     this.alarmTime = "";
     this.currentTime = "";
@@ -63,11 +63,33 @@ class alarmClock {
 
   /**
    * Метод для установки пути к аудио-файлу
-   * @param {string} audioFilePath 
+   * @param {string} audioFilePath - Путь к аудио-файлу
    */
   setAudioFilePath(audioFilePath) {
     this.audioFilePath = audioFilePath;
   }
-}
 
-module.exports = alarmClock;
+  /**
+   * Метод, возвращающий текущее время
+   * @returns {string} - Текущее время в формате 'часы:минуты:секунды'
+   */
+  getCurrentTime() {
+    return this.currentTime;
+  }
+
+  /**
+   * Метод, возвращающий время будильника
+   * @returns {string} - Текущее время в формате 'часы:минуты:секунды'
+   */
+  getAlarmTime() {
+    return this.alarmTime;
+  }
+
+  /**
+   * Метод, возвращающий флаг работы будильника
+   * @returns {boolean} - Работает ли будильник в текущий момент
+   */
+  getIsAlarmPlaying() {
+    return this.isAlarmPlaying;
+  }
+}
